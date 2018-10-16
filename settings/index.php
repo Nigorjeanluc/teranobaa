@@ -10,8 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="../assets/img/newLogo.png"/>
   <!-- Le styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="../assetss/css/bootstrap.css" rel="stylesheet">
+    <link href="../assetss/css/main.css" rel="stylesheet">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
@@ -30,8 +30,8 @@
   	<!-- ElFinder File Manager CSS. https://github.com/Studio-42/elFinder/ -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/smoothness/jquery-ui.css">
-  	<link rel="stylesheet" type="text/css" media="screen" href="assets/manager/css/elfinder.min.css">
-	<script type="text/javascript" src="assets/manager/js/elfinder.min.js"></script>	
+  	<link rel="stylesheet" type="text/css" media="screen" href="../assetss/manager/css/elfinder.min.css">
+	<script type="text/javascript" src="../assetss/manager/js/elfinder.min.js"></script>	
   	
   	<!-- elFinder web manager init -->
 	<script type="text/javascript" charset="utf-8">

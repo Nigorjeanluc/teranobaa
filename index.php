@@ -9,9 +9,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="assets/img/newLogo.png"/>
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Le styles -->
+    <link href="assetss/css/bootstrap.css" rel="stylesheet">
+    <link href="assetss/css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+
+    <!-- Google Fonts call. Font Used Open Sans -->
+  	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  	
+  	<!-- ElFinder File Manager CSS. https://github.com/Studio-42/elFinder/ -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/smoothness/jquery-ui.css">
+  	<link rel="stylesheet" type="text/css" media="screen" href="assetss/manager/css/elfinder.min.css">
+	<script type="text/javascript" src="assetss/manager/js/elfinder.min.js"></script>	
+  	
+  	<!-- elFinder web manager init -->
+	<script type="text/javascript" charset="utf-8">
+		$().ready(function() {
+			var elf = $('#elfinder').elfinder({
+				// lang: 'ru',             // language (OPTIONAL)
+				url : 'assets/manager/php/connector.php'  // connector URL (REQUIRED)
+			}).elfinder('instance');			
+		});
+	</script>
+    <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
   <script src="assets/js/jquery-1.10.2.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
@@ -31,6 +64,9 @@
     footer {
       background-color: #f2f2f2;
       padding: 25px;
+    }
+    a.pipGrid{
+        text-decoration:none;
     }
   </style>
 </head>
@@ -72,7 +108,7 @@ if(isset($_POST["login_user_name"])){
        $SellerDets = mysqli_fetch_array($result,MYSQLI_ASSOC);
        include("modules/menu.php");
 ?>
-<div class="container" style="height:400px; overflow-y:scroll;">
+<div class="container" style="height:700px; overflow-y:scroll;">
    <?php
      $sql0 = "SELECT * FROM `shopusers` WHERE `userId` = $userId";
      $res = mysqli_query($conn,$sql0);

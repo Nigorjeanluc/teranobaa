@@ -1,4 +1,4 @@
-<header>
+<div style="font-size:1.2em" class="navbar-nav navbar-inverse navbar-fixed-top">
 <?php
   include("../functions/conne.php");
   if(isset($_SESSION["sellers"]))
@@ -12,18 +12,17 @@
        echo mysqli_error($conn);
        $SellerDets = mysqli_fetch_array($result,MYSQLI_ASSOC);
        ?>
-       <nav class="navbar navbar-inverse" style="padding:30px;">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>                        
-              </button>
-              <a class="navbar-brand" href="#"><img src="../assets/img/newLogo.png" width="50"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img style="width:20px;height20px" src="../assets/img/newLogo.png" alt="">Dashboard</a>
+        </div> 
+        <div class="navbar-collapse collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
                 <li><a href="../settings/"><i class="fa fa-home"></i> Home</a></li>
                 <li><a href="../" ><i class="fa fa-product-hunt"></i> My Products</a></li>
                 <?php 
@@ -33,13 +32,12 @@
                 <li class="active"><a href="#" ><i class="fa fa-shopping-bag"></i> Shops </a></li>
                 <li><a href="../pubs/"><i class="fa fa-rocket"></i> Pubs </a></li>
                 <?php  
-                           }
-            ?>
-              </ul>
-                
-              <ul style="margin-top:15px" class="nav navbar-nav navbar-right">
-                  <li><div class="dropdown">
-                      <a href='#' class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:20px; background-color:#fff">
+                            }
+                ?>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                  <li><div style="margin-top:8px;margin-right:5px" class="dropdown">
+                      <a href='#' class="dropdown-toggle btn btn-success btn-md" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                        <i class="fa fa-shopping-cart"></i> Carts
                       </a>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"  style=" width:400%;">
@@ -68,8 +66,8 @@
                       </div>
                 </div>
                 </li>
-                <li><div class="dropdown">
-                      <a href="#" class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:20px; background-color:#fff"><i class="fa fa-comment"></i>
+                <li><div style="margin-top:8px;margin-right:5px" class="dropdown">
+                      <a href="#" class="dropdown-toggle btn btn-info btn-md" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-comment"></i>
                         Orders
                       </a>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2" style=" width:400%;">
@@ -126,10 +124,8 @@
                     <script>
                     </script>
                 </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+            </ul>
+        </div><!--/.nav-collapse -->
         <script>
 //            function realTime(){
 //                      $(".number_of_messages").load("https://www.teranoba.com/sellers/adminfunctions/admini_number_of_messages.php");
@@ -142,7 +138,8 @@
             $(".number_of_notification").load("../adminfunctions/number_of_notification.php");
              //realTime();
         </script>
-       <?php
-   }
-?>
-</header>
+        <?php
+        }
+        ?>
+    </div>
+</div>

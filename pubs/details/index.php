@@ -34,7 +34,7 @@
 <body>
     
 <?php
-include("../../../functions/conne.php");
+include("../../functions/conne.php");
    if(isset($_SESSION["sellers"]))
    {
        $userId = $_SESSION["sellers"];

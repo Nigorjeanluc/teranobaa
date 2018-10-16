@@ -30,7 +30,7 @@
                      ?>
                 <li><a href="../sellers/"><i class="fa fa-users"></i> Sellers </a></li>
                 <li><a href="../shops/" ><i class="fa fa-shopping-bag"></i> Shops </a></li>
-                <li><a href="pubs/"><i class="fa fa-rocket"></i> Pubs </a></li>
+                <li><a href="../pubs/"><i class="fa fa-rocket"></i> Pubs </a></li>
                 <?php  
                             }
                 ?>

@@ -9,7 +9,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="../assets/img/newLogo.png"/>
-  <link href="../assets/css/style.css" rel="stylesheet">
+  <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+
+    <!-- Google Fonts call. Font Used Open Sans -->
+  	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  	
+  	<!-- ElFinder File Manager CSS. https://github.com/Studio-42/elFinder/ -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/smoothness/jquery-ui.css">
+  	<link rel="stylesheet" type="text/css" media="screen" href="assets/manager/css/elfinder.min.css">
+	<script type="text/javascript" src="assets/manager/js/elfinder.min.js"></script>	
+  	
+  	<!-- elFinder web manager init -->
+	<script type="text/javascript" charset="utf-8">
+		$().ready(function() {
+			var elf = $('#elfinder').elfinder({
+				// lang: 'ru',             // language (OPTIONAL)
+				url : 'assets/manager/php/connector.php'  // connector URL (REQUIRED)
+			}).elfinder('instance');			
+		});
+	</script>
+    <link href="../assets/css/style.css" rel="stylesheet">
   <link href="../assets/css/styles.css" rel="stylesheet">
   <link href="../assets/css/bootstrap.css" rel="stylesheet">
   <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -115,17 +148,89 @@ if(isset($_POST["login_user_name"])){
      
    ?>
     <div class="row">
-      <div class="col-sm-4" style="padding:10px;"><a href="../" class="pipGrid"><div style="background-color:#2196F3; color:#fff; padding:10px"><h3><i class="fa fa-product-hunt" style="font-size:5em"></i> <span class="badge" style="font-size:2em"><?php echo $nums ?></span><br> product(s) from <?php echo $shopName ?> </h3></div></a></div>
-      <div class="col-sm-4" style="padding:10px;"><a href="../settings/sellers.php" class="pipGrid"><div  style="background-color:#2196d3; color:#fff; padding:10px"><h3><i class="fa fa-users" style="font-size:5em"></i> <span class="badge" style="font-size:2em"><?php echo $nums_of_same_shop ?></span><br> seller(s) from  <?php echo $shopName ?> </h3></div> </a></div>
-      <div class="col-sm-4" style="padding:10px;"><a href="#" class="pipGrid"><div  style="background-color:#2196b3; color:#fff; padding:10px"><h3><i class="fa fa-shopping-cart" style="font-size:5em"></i> <span class="badge" style="font-size:2em"><?php echo $nums_of_order_shop ?></span><br> order(s) for <?php echo $shopName ?> </h3></div> </a></div>
+        <div class="col-sm-4 col-lg-4">
+            <a href="../" class="pipGrid">
+      		<div class="dash-unit">
+                <br/>
+				<div style="background: none; border: none" class="thumbnail">
+					<i class="fa fa-product-hunt" style="font-size:7em"></i>
+				</div><!-- /thumbnail -->
+				<h1><span class="badge" style="font-size:1.5em"><?php echo $nums ?></span> product(s)</h1>
+				<h3 style="font-size:1.5em">from <?php echo ucfirst($shopName) ?></h3>
+			</div>
+            </a>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+            <a href="../settings/sellers.php" class="pipGrid">
+      		<div class="dash-unit">
+                <br/>
+				<div style="background: none; border: none" class="thumbnail">
+					<i class="fa fa-users" style="font-size:7em"></i>
+				</div><!-- /thumbnail -->
+				<h1><span class="badge" style="font-size:1.5em"><?php echo $nums_of_same_shop ?></span> seller(s)</h1>
+				<h3 style="font-size:1.5em">from <?php echo ucfirst($shopName) ?></h3>
+			</div>
+            </a>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+            <a href="#" class="pipGrid">
+      		<div class="dash-unit">
+                <br/>
+				<div style="background: none; border: none" class="thumbnail">
+					<i class="fa fa-shopping-cart" style="font-size:7em"></i>
+				</div><!-- /thumbnail -->
+				<h1><span class="badge" style="font-size:1.5em"><?php echo $nums_of_order_shop ?></span> order(s)</h1>
+				<h3 style="font-size:1.5em">for <?php echo ucfirst($shopName) ?></h3>
+			</div>
+            </a>
+        </div>
     </div>
+
     <div class="row">
-      <div class="col-sm-4" style="padding:10px;"><a href="../page/?client=0&demo=0" class="pipGrid"><div  style="background-color:#2196b3; color:#fff; padding:10px"><h3><i class="fa fa-envelope" style="font-size:5em"></i> <span class="badge  realTMessage" style="font-size:2em"><?php echo $nums_of_mess_shop ?></span><br> new Message(s) </h3></div> </a> </div>
-      <div class="col-sm-4" style="padding:10px;"><a href="../page/?client=0&demo=0" class="pipGrid"><div  style="background-color:#2196f3; color:#fff; padding:10px"><h3><i class="fa fa-bell" style="font-size:5em"></i> <span class="badge realTNotific" style="font-size:2em"></span><br> new notification(s) </h3></div></a></div>
-      <div class="col-sm-4" style="padding:10px;"><a href="#" class="pipGrid"><div  style="background-color:#2196d3; color:#fff; padding:10px"><h3><i class="fa fa-cart-arrow-down" style="font-size:5em"></i> <span class="badge" style="font-size:2em"></span><br> total products sold </h3></div></a></div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4" style="padding:10px;"><a href="../settings/settings.php" class="pipGrid"><div  style="background-color:#2196F3; color:#fff; padding:10px"><h3><i class="fa fa-cogs" style="font-size:5em"></i><br> My Account </h3> </div> </a>  </div>
+        <div class="col-sm-4 col-lg-4">
+            <a href="../page/?client=0&demo=0" class="pipGrid">
+      		<div class="dash-unit">
+                <br/>
+				<div style="background: none; border: none" class="thumbnail">
+					<i class="fa fa-envelope" style="font-size:7em"></i>
+				</div><!-- /thumbnail -->
+				<h1><span class="badge  realTMessage" style="font-size:1.2em"><?php echo $nums_of_mess_shop ?></span> new Message(s)</h1>
+			</div>
+            </a>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+            <a href="../page/?client=0&demo=0" class="pipGrid">
+      		<div class="dash-unit">
+                <br/>
+				<div style="background: none; border: none" class="thumbnail">
+					<i class="fa fa-bell" style="font-size:7em"></i>
+				</div><!-- /thumbnail -->
+				<h1><span class="badge realTNotific" style="font-size:1.5em"></span> new notification(s)</h1>
+			</div>
+            </a>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+            <a href="#" class="pipGrid">
+      		<div class="dash-unit">
+                <br/>
+				<div style="background: none; border: none" class="thumbnail">
+					<i class="fa fa-cart-arrow-down" style="font-size:7em"></i>
+				</div><!-- /thumbnail -->
+				<h1><span class="badge" style="font-size:1.5em"></span><br> total products sold</h1>
+			</div>
+            </a>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+            <a href="../settings/settings.php" class="pipGrid">
+      		<div class="dash-unit">
+                <br/>
+				<div style="background: none; border: none" class="thumbnail">
+					<i class="fa fa-cogs" style="font-size:7em"></i>
+				</div><!-- /thumbnail -->
+				<h1><span class="badge" style="font-size:1.5em"></span><br>My Account</h1>
+			</div>
+            </a>
+        </div>
     </div>
 </div><br>
 <br><br>
@@ -164,6 +269,5 @@ if(isset($_POST["login_user_name"])){
 }
 
 ?>
-
 </body>
 </html>
